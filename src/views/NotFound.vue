@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <RouterView></RouterView>
+  <span>Not Found</span>
 </template>
 
 <style scoped></style>

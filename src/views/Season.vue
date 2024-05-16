@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <RouterView></RouterView>
+  <span>Season</span>
 </template>
 
 <style scoped></style>

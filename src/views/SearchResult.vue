@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <RouterView></RouterView>
+  <span>Search result</span>
 </template>
 
 <style scoped></style>

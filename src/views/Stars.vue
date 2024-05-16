@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <RouterView></RouterView>
+  <span>Stars</span>
 </template>
 
 <style scoped></style>
