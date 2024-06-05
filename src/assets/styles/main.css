@@ -1,5 +1,18 @@
 @import './base.css';
-@import './common.css';
 
-#app {
+ul {
+  list-style-type: none;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  font-weight: 400;
+}
+
+.content {
+  display: flex;
+  max-width: var(--max-width);
+  width: 100%;
 }

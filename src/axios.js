@@ -1,9 +1,12 @@
 import axios from 'axios'
+const accessToken = import.meta.env.VITE_ACCESS_TOKEN
 
 const instance = axios.create({
   baseURL: 'https://api.themoviedb.org/3',
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    accept: 'application/json',
+    Authorization: `Bearer ${accessToken}`
   }
 })
 

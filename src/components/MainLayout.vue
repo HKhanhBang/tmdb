@@ -13,13 +13,18 @@
 </template>
 
 <style scoped>
-header,
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 footer {
-  background-color: var(--primary-color);
-  min-height: 64px;
 }
 
 main {
+  margin-top: 64px;
   min-height: calc(100vh - 64px * 2);
+  height: 5000px;
 }
 </style>
