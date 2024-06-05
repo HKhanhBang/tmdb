@@ -19,8 +19,6 @@ header {
   left: 0;
   right: 0;
 }
-footer {
-}
 
 main {
   margin-top: 64px;

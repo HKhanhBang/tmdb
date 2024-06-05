@@ -2,16 +2,15 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 
 import Select from './Select.vue'
-import Button from './Button.vue'
 import Avatar from './Avatar.vue'
 import SpinnerLoading from './SpinnerLoading.vue'
 import AppDropdown from './AppDropdown.vue'
 import Propover from './Propover.vue'
+import AppIcon from './AppIcon.vue'
 
 import languages from '../data/languages'
 import { getTrend, searchMulti } from '@/services/multiServices'
 import getMovieTitle from '@/utils/getMovieTitle'
-import AppIcon from './AppIcon.vue'
 
 // States
 const isHeaderShow = ref(true)
@@ -103,7 +102,7 @@ onUnmounted(() => {
       <ul class="nav nav--left">
         <li>
           <RouterLink to="/" class="logo">
-            <img src="../assets/logos/small-logo.svg" alt="tmdb logo" />
+            <img src="../assets/images/logo1.svg" alt="tmdb logo" />
           </RouterLink>
         </li>
         <li>
@@ -189,9 +188,9 @@ onUnmounted(() => {
         <li>
           <Propover class="propover--language">
             <template #header>
-              <Button class="btn--open-language-propover">
+              <button class="btn btn-open-language-propover">
                 {{ langShortName }}
-              </Button>
+              </button>
             </template>
             <template #content>
               <h2 class="language-propover-title">Language Preferences</h2>
@@ -201,8 +200,9 @@ onUnmounted(() => {
                 :selected="language"
                 @change="handleChangeLanguage"
               ></Select>
-              <Button
+              <button
                 :class="[
+                  'btn',
                   'btn-change-language',
                   { 'btn-change-language--loading': isChangeLangLoading }
                 ]"
@@ -219,7 +219,7 @@ onUnmounted(() => {
                   :loading="isChangeLangLoading"
                 ></AppIcon>
                 RELOAD PAGE
-              </Button>
+              </button>
             </template>
           </Propover>
         </li>
@@ -258,7 +258,7 @@ onUnmounted(() => {
           </Propover>
         </li>
         <li>
-          <Button @click="isSearchBarShow = !isSearchBarShow">
+          <button @click="isSearchBarShow = !isSearchBarShow" class="btn">
             <AppIcon
               name="search"
               color="#01B4E4"
@@ -273,7 +273,7 @@ onUnmounted(() => {
               :height="30"
               v-show="isSearchBarShow"
             ></AppIcon>
-          </Button>
+          </button>
         </li>
       </ul>
     </nav>
@@ -290,13 +290,13 @@ onUnmounted(() => {
           v-focus
           v-suggest
         />
-        <Button
+        <button
           @click="handleRemoveSearchText"
           v-show="!isSuggestLoading"
-          class="btn--remove-search-text"
+          class="btn btn-remove-search-text"
         >
           <AppIcon name="close" color="#495057" :width="16" :height="16"></AppIcon>
-        </Button>
+        </button>
         <SpinnerLoading
           v-show="isSuggestLoading"
           :width="16"

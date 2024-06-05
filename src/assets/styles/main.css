@@ -11,6 +11,11 @@ ul {
   font-weight: 400;
 }
 
+.btn {
+  border-style: none;
+  background-color: transparent;
+}
+
 .content {
   display: flex;
   max-width: var(--max-width);
