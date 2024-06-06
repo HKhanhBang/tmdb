@@ -4,13 +4,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   transition-duration: 0.2s;
   transition-timing-function: linear;
-  transition-delay: 0.1s;
+  transition-delay: 0.2s;
 }
 
 .header--hide {

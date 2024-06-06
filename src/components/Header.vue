@@ -14,6 +14,7 @@ import getMovieTitle from '@/utils/getMovieTitle'
 
 // States
 const isHeaderShow = ref(true)
+const lastScrollTop = ref(window.scrollY)
 
 // Lang propover
 const language = ref(
@@ -78,12 +79,15 @@ function handleRemoveSearchText() {
 }
 
 function handleHideHeader() {
-  if (window.scrollY >= 256) {
+  const scrollTop = window.scrollY
+  if (scrollTop > lastScrollTop.value && scrollTop >= 256) {
     isHeaderShow.value = false
     isSuggestsShow.value = false
-  } else {
+  } else if (scrollTop < lastScrollTop.value) {
     isHeaderShow.value = true
   }
+
+  lastScrollTop.value = scrollTop
 }
 
 // Hooks
@@ -188,7 +192,7 @@ onUnmounted(() => {
         <li>
           <Propover class="propover--language">
             <template #header>
-              <button class="btn btn-open-language-propover">
+              <button type="button" class="btn btn-open-language-propover">
                 {{ langShortName }}
               </button>
             </template>
@@ -201,6 +205,7 @@ onUnmounted(() => {
                 @change="handleChangeLanguage"
               ></Select>
               <button
+                type="button"
                 :class="[
                   'btn',
                   'btn-change-language',
@@ -258,7 +263,7 @@ onUnmounted(() => {
           </Propover>
         </li>
         <li>
-          <button @click="isSearchBarShow = !isSearchBarShow" class="btn">
+          <button type="button" @click="isSearchBarShow = !isSearchBarShow" class="btn">
             <AppIcon
               name="search"
               color="#01B4E4"
@@ -291,6 +296,7 @@ onUnmounted(() => {
           v-suggest
         />
         <button
+          type="button"
           @click="handleRemoveSearchText"
           v-show="!isSuggestLoading"
           class="btn btn-remove-search-text"
