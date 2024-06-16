@@ -11,6 +11,7 @@ import AppIcon from './AppIcon.vue'
 import languages from '../data/languages'
 import { getTrend, searchMulti } from '@/services/multiServices'
 import getMovieTitle from '@/utils/getMovieTitle'
+import ReloadIcon from './icons/ReloadIcon.vue'
 
 // States
 const isHeaderShow = ref(true)
@@ -92,7 +93,7 @@ function handleHideHeader() {
 
 // Hooks
 onMounted(() => {
-  window.addEventListener('scroll', handleHideHeader)
+  document.addEventListener('scroll', handleHideHeader)
 })
 
 onUnmounted(() => {
@@ -190,47 +191,49 @@ onUnmounted(() => {
       </ul>
       <ul class="nav nav--right">
         <li>
-          <Propover class="propover--language">
+          <Propover>
             <template #header>
               <button type="button" class="btn btn-open-language-propover">
                 {{ langShortName }}
               </button>
             </template>
             <template #content>
-              <h2 class="language-propover-title">Language Preferences</h2>
-              <label for="language" class="language-propover-label">Language</label>
-              <Select
-                :options="languages"
-                :selected="language"
-                @change="handleChangeLanguage"
-              ></Select>
-              <button
-                type="button"
-                :class="[
-                  'btn',
-                  'btn-change-language',
-                  { 'btn-change-language--loading': isChangeLangLoading }
-                ]"
-                @click="applyLanguage"
-                v-show="isBtnChangeLangShow"
-                :disabled="isChangeLangLoading"
-              >
-                <AppIcon
-                  name="reload"
-                  :width="14"
-                  :height="14"
-                  :margin-right="6"
-                  color="#fff"
-                  :loading="isChangeLangLoading"
-                ></AppIcon>
-                RELOAD PAGE
-              </button>
+              <div class="propover-content language-propover-content">
+                <h2 class="language-propover-content__title">Language Preferences</h2>
+                <label for="language" class="language-propover-content__label">Language</label>
+                <Select
+                  :options="languages"
+                  :selected="language"
+                  @change="handleChangeLanguage"
+                ></Select>
+                <button
+                  type="button"
+                  :class="[
+                    'btn',
+                    'btn-change-language',
+                    { 'btn-change-language--loading': isChangeLangLoading }
+                  ]"
+                  @click="applyLanguage"
+                  v-show="isBtnChangeLangShow"
+                  :disabled="isChangeLangLoading"
+                >
+                  <AppIcon
+                    name="reload"
+                    :width="14"
+                    :height="14"
+                    :margin-right="6"
+                    color="#fff"
+                    :loading="isChangeLangLoading"
+                  ></AppIcon>
+                  RELOAD PAGE
+                </button>
+              </div>
             </template>
           </Propover>
         </li>
         <li>
           <!-- <RouterLink to="/login" class="link"></RouterLink> -->
-          <Propover class="propover--account">
+          <Propover>
             <template #header>
               <Avatar
                 src="https://secure.gravatar.com/avatar/8b54b5d7e3628bd7d9e3c35983bb0b81.jpg?s=32"
@@ -238,25 +241,27 @@ onUnmounted(() => {
               ></Avatar>
             </template>
             <template #content>
-              <div class="account-propover-header">
-                <span class="account-propover-header__title">bongbongdan</span>
-              </div>
-              <div class="account-propover-body">
-                <div class="account-propover-body-group">
-                  <ul>
-                    <li>
-                      <RouterLink class="link link--account-propover" to="/">Lists</RouterLink>
-                    </li>
-                    <li>
-                      <RouterLink class="link link--account-propover" to="/">Ratings</RouterLink>
-                    </li>
-                    <li>
-                      <RouterLink class="link link--account-propover" to="/">Watchlist</RouterLink>
-                    </li>
-                  </ul>
+              <div class="propover-content account-propover-content">
+                <div class="account-propover-content-header">
+                  <span class="account-propover-content-header__title">bongbongdan</span>
                 </div>
-                <div class="account-propover-body-group">
-                  <RouterLink class="link link--account-propover" to="/">Logout</RouterLink>
+                <div class="account-propover-content-body">
+                  <div class="propover-content-section">
+                    <ul>
+                      <li>
+                        <RouterLink class="link propover-section-link" to="/">Lists</RouterLink>
+                      </li>
+                      <li>
+                        <RouterLink class="link propover-section-link" to="/">Ratings</RouterLink>
+                      </li>
+                      <li>
+                        <RouterLink class="link propover-section-link" to="/">Watchlist</RouterLink>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="propover-content-section">
+                    <RouterLink class="link propover-section-link" to="/">Logout</RouterLink>
+                  </div>
                 </div>
               </div>
             </template>
@@ -341,5 +346,5 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-@import '../assets/styles/header.css';
+@import '../assets/styles/components/header.css';
 </style>

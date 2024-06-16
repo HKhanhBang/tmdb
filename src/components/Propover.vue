@@ -20,49 +20,14 @@ onUnmounted(() => {
 </script>
 <template>
   <div class="propover" ref="propoverEl">
-    <div class="propover-header" @click="isPropoverContentShow = true">
+    <div class="propover-header-wrapper" @click="isPropoverContentShow = true">
       <slot name="header"></slot>
     </div>
-    <div class="propover-content" v-show="isPropoverContentShow">
+    <div class="propover-content-wrapper" v-show="isPropoverContentShow">
       <slot name="content"></slot>
     </div>
   </div>
 </template>
 <style scoped>
-.propover {
-  position: relative;
-  z-index: 99;
-}
-
-.propover--account .propover-content {
-  min-width: 180px;
-}
-
-.propover--language .propover-content {
-  top: calc(100% + 11px);
-  width: 300px;
-  padding: 13px;
-}
-
-.propover-content {
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #fff;
-  border: 1px solid rgba(33, 37, 41, 0.15);
-  border-radius: 4px;
-  z-index: 99;
-}
-
-.propover-content::before {
-  content: '';
-  display: block;
-  border: 7px solid #fff;
-  border-color: transparent transparent #fff transparent;
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-}
+@import '../assets/styles/components/propover.css';
 </style>

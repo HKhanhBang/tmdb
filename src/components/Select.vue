@@ -8,7 +8,6 @@ const props = defineProps({
   },
   selected: {
     type: Object,
-    required: false,
     default: null
   }
 })

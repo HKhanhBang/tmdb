@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <header>
     <slot name="header"></slot>
@@ -13,9 +11,5 @@
 </template>
 
 <style scoped>
-main {
-  margin-top: 64px;
-  min-height: calc(100vh - 64px * 2);
-  height: 5000px;
-}
+@import '../assets/styles/components/layout.css';
 </style>

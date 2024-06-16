@@ -1,0 +1,28 @@
+.scroller {
+  max-width: var(--max-width);
+  width: 100%;
+  position: relative;
+}
+
+.scroller-fade {
+  content: '';
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #fff 100%);
+  transition: linear 0.3s;
+}
+
+.scroller-content {
+  column-gap: 20px;
+  overflow-x: scroll;
+  width: inherit;
+  padding: 20px 0;
+  display: flex;
+}
+
+.scroller-fade--hide {
+  opacity: 0;
+}

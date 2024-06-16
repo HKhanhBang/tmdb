@@ -3,11 +3,9 @@
 }
 
 .content--footer {
-  max-width: 818px;
-  margin: 0 auto;
-  padding: 80px 0;
+  padding-top: 80px;
+  padding-bottom: 80px;
   column-gap: 40px;
-  row-gap: 40px;
 }
 
 .left {

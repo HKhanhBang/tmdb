@@ -1,11 +1,11 @@
 <script setup>
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
-import MainLayout from './components/MainLayout.vue'
+import Layout from './components/Layout.vue'
 </script>
 
 <template>
-  <MainLayout>
+  <Layout>
     <template #header>
       <Header></Header>
     </template>
@@ -15,7 +15,7 @@ import MainLayout from './components/MainLayout.vue'
     <template #footer>
       <Footer></Footer>
     </template>
-  </MainLayout>
+  </Layout>
 </template>
 
 <style scoped></style>

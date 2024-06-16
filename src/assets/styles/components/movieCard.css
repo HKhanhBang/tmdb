@@ -1,0 +1,145 @@
+.card {
+  width: 150px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.media {
+  position: relative;
+}
+
+.media__image {
+  height: 225px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: #dbdbdb;
+  overflow: hidden;
+  display: block;
+}
+
+.media__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.options {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.option-btn__icon:hover {
+  filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%) hue-rotate(156deg)
+    brightness(98%) contrast(99%);
+  opacity: 1;
+}
+
+.option-btn__icon {
+  width: 25.6px;
+  height: 25.6px;
+  opacity: 0.6;
+  fill: #fff;
+}
+
+.propover-content {
+  top: 34px;
+  width: 131px;
+}
+
+.propover-content::before {
+  display: none;
+}
+
+.propover-content-section:first-child {
+  border-top: none;
+}
+
+.propover-section-link {
+  display: flex;
+  align-items: center;
+}
+
+.propover-section-link:hover .propover-section-link__icon {
+  fill: #fff;
+}
+
+.propover-section-link__icon {
+  width: 17.2px;
+  height: 17.2px;
+  margin-right: 4px;
+}
+
+.card-content {
+  padding: 26px 10px 0 10px;
+  position: relative;
+}
+
+.rating {
+  background-color: #000;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: inline-block;
+  position: absolute;
+  top: -19px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.outer-ring {
+  width: 34px;
+  height: 34px;
+  border: 2.5px solid #21ce79;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score__percent {
+  font-size: 6px;
+}
+
+.card-content__title {
+  font-weight: 700;
+  color: #000;
+  font-size: 1.6rem;
+  margin: 0;
+  width: 100%;
+  word-wrap: normal;
+  overflow-wrap: break-word;
+  line-height: 1;
+}
+
+.card-content__title:hover {
+  color: rgb(1, 180, 228);
+}
+
+.card-content__date {
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  border-radius: 8px;
+  transition: linear 0.1s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.layer--show {
+  visibility: visible;
+  opacity: 1;
+}

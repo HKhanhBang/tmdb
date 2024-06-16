@@ -1,0 +1,107 @@
+.selector-wraper {
+  border: 1px solid var(--primary-color);
+  border-radius: 30px;
+  color: var(--primary-color);
+}
+
+.selector-wrapper--primary {
+  color: #fff;
+  border-color: rgb(30, 213, 169);
+}
+
+.selector {
+  display: flex;
+  position: relative;
+}
+
+.selector-wrapper--primary .selector__background {
+  background: linear-gradient(to right, #c0fecf 0, #1ed5a9 100%);
+}
+
+.selector__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 30px;
+  transition: left 0.25s;
+}
+
+.anchor {
+  padding: 4px 20px;
+  font-weight: 600;
+  transition: -webkit-text-fill-color 0.5s;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.anchor--selected .anchor__title {
+  background: linear-gradient(to right, #c0fecf 0, #1ed5a9 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.selector-wrapper--primary .anchor--selected .anchor__title {
+  background: none;
+  -webkit-text-fill-color: initial;
+  color: var(--primary-color);
+}
+
+.anchor__icon {
+  filter: invert(89%) sepia(21%) saturate(454%) hue-rotate(75deg) brightness(104%) contrast(99%);
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  display: none;
+}
+
+/* Mobile */
+.selector-wrapper--primary.selector-wraper--mobile {
+  color: var(--primary-color);
+}
+
+.selector-wraper--mobile {
+  border-radius: 15px;
+}
+
+.selector-wraper--mobile .selector {
+  flex-direction: column;
+}
+
+.selector-wraper--mobile .selector {
+  background: linear-gradient(to right, #c0fecf 0, #1ed5a9 100%);
+  border-radius: 15px;
+}
+
+.selector-wraper--mobile .selector__background {
+  display: none;
+}
+
+.selector-wraper--mobile .anchor--selected {
+  background-color: var(--primary-color);
+}
+
+.selector-wrapper--primary.selector-wraper--mobile .anchor--selected {
+  background-color: transparent;
+}
+
+.selector-wraper--mobile .anchor:not(.anchor--selected) {
+  display: none;
+}
+
+.selector-wraper--mobile .selector--open .anchor:not(.anchor--selected) {
+  display: block;
+}
+
+.selector-wraper--mobile .anchor--selected .anchor__icon {
+  display: block;
+}
+
+.selector-wrapper--primary.selector-wraper--mobile .anchor--selected .anchor__icon {
+  fill: var(--primary-color);
+  filter: none;
+}

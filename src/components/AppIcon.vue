@@ -5,6 +5,7 @@ import CloseIcon from './icons/CloseIcon.vue'
 import ReloadIcon from './icons/ReloadIcon.vue'
 import SearchIcon from './icons/SearchIcon.vue'
 import TrendingIcon from './icons/TrendingIcon.vue'
+import ArrowDownIcon from './icons/ArrowDownIcon.vue'
 
 const props = defineProps({
   name: {
@@ -23,6 +24,9 @@ const props = defineProps({
   marginRight: {
     type: Number
   },
+  marginLeft: {
+    type: Number
+  },
   loading: {
     type: Boolean
   }
@@ -32,7 +36,8 @@ const icons = {
   close: CloseIcon,
   reload: ReloadIcon,
   search: SearchIcon,
-  trending: TrendingIcon
+  trending: TrendingIcon,
+  arrowDown: ArrowDownIcon
 }
 
 const iconComponent = computed(() => icons[props.name])
@@ -40,8 +45,8 @@ const iconComponent = computed(() => icons[props.name])
 const styleObject = computed(() => ({
   width: props.width + 'px',
   height: props.height + 'px',
-  color: props.color + 'px',
   marginRight: props.marginRight + 'px',
+  marginLeft: props.marginLeft + 'px',
   fill: props.color
 }))
 </script>
