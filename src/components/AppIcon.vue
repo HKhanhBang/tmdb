@@ -5,7 +5,7 @@ import CloseIcon from './icons/CloseIcon.vue'
 import ReloadIcon from './icons/ReloadIcon.vue'
 import SearchIcon from './icons/SearchIcon.vue'
 import TrendingIcon from './icons/TrendingIcon.vue'
-import ArrowDownIcon from './icons/ArrowDownIcon.vue'
+import ArrowDownIcon from './icons/TriangleIcon.vue'
 
 const props = defineProps({
   name: {

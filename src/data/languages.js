@@ -1,6 +1,6 @@
 const languages = [
-  { fullName: 'Vietnamese (vi-VN)', shortName: 'VI', code: 'vi-VN' },
-  { fullName: 'English (en-US)', shortName: 'EN', code: 'en-US' }
+  { name: 'Vietnamese (vi-VN)', shortName: 'VI', value: 'vi-VN' },
+  { name: 'English (en-US)', shortName: 'EN', value: 'en-US' }
 ]
 
 export default languages

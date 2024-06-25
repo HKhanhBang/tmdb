@@ -1,6 +1,6 @@
 <script setup>
 import { computed, onMounted, onUnmounted, ref } from 'vue'
-import ArrowDownIcon from './icons/ArrowDownIcon.vue'
+import ArrowDownIcon from './icons/TriangleIcon.vue'
 
 const anchorRefs = ref([])
 const backgroundRef = ref(null)

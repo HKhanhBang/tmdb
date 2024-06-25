@@ -1,0 +1,42 @@
+.movies {
+}
+
+.movies-content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.header__title {
+  font-size: 2.56rem;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.body {
+}
+
+.left-col {
+  width: 260px;
+}
+
+.group {
+  padding: 14px 16px 16px 16px;
+  border-top: 1px solid #eee;
+}
+
+.group-header {
+  margin-bottom: 10px;
+}
+
+.group-header__title {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.group-body {
+}

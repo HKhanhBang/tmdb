@@ -9,6 +9,10 @@ const props = defineProps({
   selected: {
     type: Object,
     default: null
+  },
+  type: {
+    type: String,
+    validator: (val) => ['small'].includes(val)
   }
 })
 
@@ -17,7 +21,7 @@ const emit = defineEmits(['change'])
 const open = ref(false)
 
 const selected = computed(() => {
-  return Object.keys(props.selected).length > 0 ? props.selected : props.options[0]
+  return props.selected ? props.selected : props.options[0]
 })
 
 function handleChooseOption(option) {
@@ -26,21 +30,21 @@ function handleChooseOption(option) {
 }
 </script>
 <template>
-  <div class="select">
+  <div :class="['select', `select--${type}`]">
     <div class="header" @click="open = !open">
-      <span class="header__title">{{ selected.fullName }}</span>
+      <span class="header__title">{{ selected.name }}</span>
       <span class="header__icon"></span>
     </div>
     <div class="options" v-show="open">
       <ul>
         <li
           v-for="option in options"
-          :key="option.code"
+          :key="option.value"
           class="options__option"
-          :class="{ 'options__option--active': selected.code === option.code }"
+          :class="{ 'options__option--active': selected.value === option.value }"
           @click="handleChooseOption(option)"
         >
-          {{ option.fullName }}
+          {{ option.name }}
         </li>
       </ul>
     </div>
@@ -49,6 +53,11 @@ function handleChooseOption(option) {
 <style scoped>
 .select {
   position: relative;
+}
+
+.select--small .header__title {
+  font-size: 14.4px;
+  line-height: 21.6px;
 }
 
 .header {
@@ -64,7 +73,7 @@ function handleChooseOption(option) {
 }
 
 .header__title {
-  padding: 7px 12px;
+  padding: 6px 12px;
   line-height: 1.5;
   color: rgb(33, 37, 41);
   flex: 1;
